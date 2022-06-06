@@ -8,7 +8,7 @@ const bcrypt = require('bcryptjs');
 const { body, validationResult } = require('express-validator')
 
 exports.register_get = function(req, res, next) {
-  res.render('register', {title: 'Register'})
+  res.render('reg', {title: 'Register'})
 };
 
 exports.createUser_post = [
