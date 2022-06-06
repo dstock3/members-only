@@ -7,12 +7,14 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const User = require('./models/users')
 const path = require('path');
-const flash = require('connect-flash')
-const favicon = require('serve-favicon')
+const flash = require('connect-flash');
+const helmet = require('helmet');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
 
 const indexRouter = require ('./routes/index');
 
-const mongoDb = process.env.DB_URL
+const mongoDb = process.env.DB
 mongoose.connect(mongoDb, { useUnifiedTopology: true, useNewUrlParser: true});
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'mongo connection error'));
@@ -55,8 +57,6 @@ app.set('view engine', 'pug')
 
 app.use(helmet());
 app.use(logger('dev'));
-app.use(cookieParser());
-app.use(compression());
 app.use(express.static(__dirname+'/public'));
 
 app.use(session({ secret: process.env.SECRET, resave: false, saveUninitialized: true}));
@@ -89,7 +89,6 @@ app.use(function(err, req, res, next){
   res.render('error')
 });
 
-app.listen(process.env.PORT, () => console.log(`app running on port ${process.env.PORT}`))
-
+app.listen(process.env.PORT)
 
 module.exports = app;
