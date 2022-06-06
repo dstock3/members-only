@@ -1,3 +1,4 @@
+//Import model(s)
 const Message = require('../models/messages')
 
 exports.index = async(req, res, next) => {
