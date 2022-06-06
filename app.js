@@ -17,6 +17,7 @@ mongoose.connect(mongoDb, { useUnifiedTopology: true, useNewUrlParser: true});
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'mongo connection error'));
 
+//Employ local strategy middleware
 passport.use(
   new LocalStrategy((username, password, done) =>{
     User.findOne({username: username}, (err, user) => {
@@ -58,7 +59,7 @@ app.use(cookieParser());
 app.use(compression());
 app.use(express.static(__dirname+'/public'));
 
-app.use(session({ secret: 'dogs', resave: false, saveUninitialized: true}));
+app.use(session({ secret: process.env.SECRET, resave: false, saveUninitialized: true}));
 app.use(express.urlencoded({ extended: false}));
 app.use(passport.initialize());
 app.use(passport.session());
