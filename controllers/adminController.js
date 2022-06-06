@@ -22,7 +22,7 @@ exports.makeAdmin_post = [
     const errors = validationResult(req);
     
     if(!errors.isEmpty()){
-      return res.render('admin', {title:'Admin login', admin: req.user.admin, message: 'Password is incorrect'});
+      return res.render('admin', { title:'Admin login', admin: req.user.admin, message: 'Password is incorrect'});
     }
     
     const updatedUser = await User.findOne({username: res.locals.currentUser.username});
@@ -31,7 +31,7 @@ exports.makeAdmin_post = [
     await updatedUser.save( err => {
       if (err){ return next(err) }
       console.log('User now has administrative privileges');
-      res.redirect('/member');
+      res.redirect('/mem');
     })
   }
 ]
@@ -49,7 +49,7 @@ exports.delete_post = function(req, res, next) {
         
         Message.findByIdAndDelete(messageId, function(err, docs){
           if (err) { return next(err) }
-          res.redirect('/member')
+          res.redirect('/mem')
     })
   })
 };
@@ -67,7 +67,7 @@ exports.delete_reply = function(req, res, next) {
         Reply.findByIdAndDelete(id, function(err, docs) {
             if (err){ return next(err) }
 
-            res.redirect('/member')
+            res.redirect('/mem')
         })
     })
 };

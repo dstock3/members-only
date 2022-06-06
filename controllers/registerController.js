@@ -27,19 +27,19 @@ exports.createUser_post = [
       return true;
 
     }),
-    
+
     async (req, res, next) => {
       const errors = validationResult(req)
       
       if (!errors.isEmpty()) {
-        return res.render('register', {title: 'Register', errors: errors.errors, username: req.body.username })
+        return res.render('reg', {title: 'Register', errors: errors.errors, username: req.body.username })
       }
 
       try {
         const userExists = await User.findOne({username: req.body.username});
 
         if (userExists !== null) {
-           return res.render('register', {title: 'Register', usernameExists: 'Username already exists'})
+           return res.render('reg', {title: 'Register', usernameExists: 'Username already exists'})
         }
           bcrypt.hash(req.body.password, 12, (err, hashedPassword) => {
 

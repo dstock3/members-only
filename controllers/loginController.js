@@ -3,9 +3,9 @@ const passport = require('passport')
 
 exports.login_get = function(req, res, next){
   
-    if (res.locals.currentUser) { res.redirect('/member')}
+    if (res.locals.currentUser) { res.redirect('/mem')}
   
-  res.render('login', {message: req.flash('err')})
+  res.render('login', { message: req.flash('err') })
 };
 
 exports.loginUser_post = passport.authenticate('local', {

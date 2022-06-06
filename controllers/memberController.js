@@ -20,22 +20,22 @@ exports.memberpage_get = async function(req, res, next){
       }
     }]);
 
-    res.render('member', { user: req.user, errorMessage: req.flash('error',), messages: messages })
+    res.render('mem', { user: req.user, errorMessage: req.flash('error',), messages: messages })
 
   } catch(err) { return next(err) }
 };
 
 exports.allMembers_get = async function(req, res, next){
   try { const members = await User.find();
-    res.render('allmembers', { members: members, user: res.locals.currentUser })
+    res.render('mems', { members: members, user: res.locals.currentUser })
   } catch(err) { return next(err) }
 }
 
 exports.userProfile_get = async function(req, res, next){
   try {
     const profile = await User.findOne({_id: req.params.id}).populate('messages')
-    res.render('memberprofile', { name:profile.username, messages: profile.messages, profid: profile._id, user:res.locals.currentUser})
-  } catch(err) {return next(err) }
+    res.render('memProf', { name: profile.username, messages: profile.messages, profid: profile._id, user:res.locals.currentUser})
+  } catch(err) { return next(err) }
 }
 
 exports.confirmMembership_post = [
@@ -47,14 +47,14 @@ exports.confirmMembership_post = [
   async (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()){
-      return res.render('member', { user:req.user, passcodeError: 'Passcode is incorrect' });
+      return res.render('mem', { user: req.user, passcodeError: 'incorrect password' });
     }
         const updatedUser = await User.findOne({ username: res.locals.currentUser.username });
         updatedUser.member = true;
 
         await updatedUser.save( err => {
           if (err) { return next(err) }
-          res.redirect('/member');
+          res.redirect('/mem');
         });
       }
 ];
@@ -78,7 +78,7 @@ exports.addMessage_post = [
       if (err){
         return next(err);
       }
-      res.redirect('/member');
+      res.redirect('/mem');
     })
 
     await User.findOneAndUpdate(
@@ -86,10 +86,7 @@ exports.addMessage_post = [
       {$push: {messages: message}}
     )
 
-  } catch(err) {
-    return next(err);
-  }
-
+  } catch(err) { return next(err) }
   }
 ];
 
@@ -119,7 +116,7 @@ exports.addReply_post = [
           {$push: {replies: reply}
         });
 
-        res.redirect('/member')
+        res.redirect('/mem')
 
     } catch(err) { return next(err) }
   }
