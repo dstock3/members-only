@@ -13,7 +13,7 @@ exports.admin_get = (req, res, next) => {
 exports.makeAdmin_post = [
   //Check admin password  
   body('password').trim().isLength({max: 4}).escape().custom(async(value,{req}) => {
-    if (value !== process.env.PASSWORD) { throw new Error('Password is incorrect') }
+    if (value !== process.env.ADMIN_CODE) { throw new Error('Password is incorrect') }
     return true;
   }),
 
