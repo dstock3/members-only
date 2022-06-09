@@ -39,7 +39,7 @@ exports.createUser_post = [
         const userExists = await User.findOne({username: req.body.username});
 
         if (userExists !== null) {
-           return res.render('reg', {title: 'Register', usernameExists: 'Username already exists'})
+           return res.render('reg', { userEx: true })
         }
           bcrypt.hash(req.body.password, 12, (err, hashedPassword) => {
 

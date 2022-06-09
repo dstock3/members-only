@@ -1,0 +1,34 @@
+doctype html
+html(lang="en")
+    head
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(href="/styles/register.css" rel="stylesheet" type="text/css")
+        meta(charset="utf-8")
+        title Members Only - Register
+    body
+        header
+            h1 Register
+        main
+            form(class="registerForm" action='' method="POST")
+                label(for="username") username: 
+                input(type="text" required name="username")
+
+                if locals.userEx
+                    span(class="reg-msg") This username already exists. Please choose another name.
+                
+                label(for="password") password: 
+                input(type="password" required name="password")
+
+                label(for="confirmPassword") confirm pw: 
+                input(type="password" required name="confirmPassword")
+
+                button(class="submit-btn") Register
+            if locals.errors
+                ul(class="reg-err")
+                    each val in locals.errors
+                        li val
+    
+    footer
+        div(class="social-links")
+        a(href='https://github.com/dstock3' class="github" target="_blank" rel="noopener noreferrer")= "Github"
+        a(href='https://davestockdale.io' class="portfolio" target="_blank" rel="noopener noreferrer")= "Portfolio"
