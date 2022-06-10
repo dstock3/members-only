@@ -1,0 +1,16 @@
+doctype html
+html(lang="en")
+    head
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(href="/styles/mem.css" rel="stylesheet" type="text/css")
+        meta(charset="utf-8")
+        title Members Only
+    body
+        header
+            div(class="welcome") Welcome #{locals.user.username}
+        main
+
+    footer
+        div(class="social-links")
+        a(href='https://github.com/dstock3' class="github" target="_blank" rel="noopener noreferrer")= "Github"
+        a(href='https://davestockdale.io' class="portfolio" target="_blank" rel="noopener noreferrer")= "Portfolio"
