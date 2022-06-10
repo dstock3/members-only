@@ -3,7 +3,7 @@ html(lang="en")
     head
         meta(name="viewport" content="width=device-width, initial-scale=1")
         link(href="/styles/general.css" rel="stylesheet" type="text/css")
-        link(href="/styles/error.css" rel="stylesheet" type="text/css")
+        link(href="/styles/admin.css" rel="stylesheet" type="text/css")
         meta(charset="utf-8")
         title Members Only - Error!
     body
@@ -19,9 +19,20 @@ html(lang="en")
                     a(class="login-link" href="/login") Login
                     a(class="reg-link" href="/register") Register
         main(class="admin-page")
+            if !locals.user.admin
+                h1(class="admin-form-head") Become an Admin 
+                form("class="loginForm" action="" method="POST")
+                    label(for="username") username: 
+                    input(type="text" name="username")
 
+                    label(for="password") admin password:
+                    input(type="password" name="password")
+
+                    button(class="submit-btn") Register
+            else
+                h1("admin-head") Admin Dashboard
 
         footer
             div(class="social-links")
-                a(href='https://github.com/dstock3' class="github" target="_blank" rel="noopener noreferrer")= "Github"
-                a(href='https://davestockdale.io' class="portfolio" target="_blank" rel="noopener noreferrer")= "Portfolio"
+                a(href='https://github.com/dstock3' class="github" target="_blank" rel="noopener noreferrer") Github
+                a(href='https://davestockdale.io' class="portfolio" target="_blank" rel="noopener noreferrer") Portfolio
