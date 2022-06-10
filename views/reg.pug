@@ -9,7 +9,7 @@ html(lang="en")
     body
         header
             h1 Register
-        main
+        main(class="register-page")
             form(class="registerForm" action='' method="POST")
                 label(for="username") username: 
                 input(type="text" required name="username")
@@ -29,7 +29,7 @@ html(lang="en")
                     each val in locals.errors
                         li val
     
-    footer
-        div(class="social-links")
-        a(href='https://github.com/dstock3' class="github" target="_blank" rel="noopener noreferrer")= "Github"
-        a(href='https://davestockdale.io' class="portfolio" target="_blank" rel="noopener noreferrer")= "Portfolio"
+        footer
+            div(class="social-links")
+                a(href='https://github.com/dstock3' class="github" target="_blank" rel="noopener noreferrer")= "Github"
+                a(href='https://davestockdale.io' class="portfolio" target="_blank" rel="noopener noreferrer")= "Portfolio"

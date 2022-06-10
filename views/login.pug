@@ -9,7 +9,7 @@ html(lang="en")
     body
         header 
             h1 Please Login
-        main
+        main(class="login-page")
             form(class="loginForm" action="" method="POST")
                 label(for="username") username: 
                 input(type="text" name="username")
@@ -20,7 +20,7 @@ html(lang="en")
                 button(class="submit-btn") Login
 
 
-    footer
-        div(class="social-links")
-        a(href='https://github.com/dstock3' class="github" target="_blank" rel="noopener noreferrer")= "Github"
-        a(href='https://davestockdale.io' class="portfolio" target="_blank" rel="noopener noreferrer")= "Portfolio"
+        footer
+            div(class="social-links")
+                a(href='https://github.com/dstock3' class="github" target="_blank" rel="noopener noreferrer")= "Github"
+                a(href='https://davestockdale.io' class="portfolio" target="_blank" rel="noopener noreferrer")= "Portfolio"

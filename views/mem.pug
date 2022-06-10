@@ -9,9 +9,9 @@ html(lang="en")
     body
         header
             div(class="welcome") Welcome #{locals.user.username}
-        main
+        main(class="member-page")
 
-    footer
-        div(class="social-links")
-        a(href='https://github.com/dstock3' class="github" target="_blank" rel="noopener noreferrer")= "Github"
-        a(href='https://davestockdale.io' class="portfolio" target="_blank" rel="noopener noreferrer")= "Portfolio"
+        footer
+            div(class="social-links")
+                a(href='https://github.com/dstock3' class="github" target="_blank" rel="noopener noreferrer")= "Github"
+                a(href='https://davestockdale.io' class="portfolio" target="_blank" rel="noopener noreferrer")= "Portfolio"
