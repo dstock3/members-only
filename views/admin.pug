@@ -8,8 +8,16 @@ html(lang="en")
         title Members Only - Error!
     body
         header
-            a(class="login-link" href="/login") Login
-            a(class="reg-link" href="/register") Register
+            if locals.user
+                nav
+                    a(href="/admin" class="admin-link selected") Admin
+                    a(href="/members" class="members-link") Members
+                    a(href="/profile" class="profile-link") Profile
+                    a(href="/logout" class="logout-link") Logout
+            else
+                nav
+                    a(class="login-link" href="/login") Login
+                    a(class="reg-link" href="/register") Register
         main(class="admin-page")
 
 
