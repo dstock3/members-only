@@ -2,13 +2,14 @@ doctype html
 html(lang="en")
     head
         meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(href="/styles/reset.css" rel="stylesheet" type="text/css")
         link(href="/styles/general.css" rel="stylesheet" type="text/css")
         link(href="/styles/error.css" rel="stylesheet" type="text/css")
         meta(charset="utf-8")
         title Members Only - Error!
     body
         header
-            h1 Members Only
+            h1(class="title") Members Only
             if locals.user
                 nav(class="member-nav")
                     a(href="/admin" class="admin-link selected") Admin

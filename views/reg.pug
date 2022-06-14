@@ -2,13 +2,14 @@ doctype html
 html(lang="en")
     head
         meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(href="/styles/reset.css" rel="stylesheet" type="text/css")
         link(href="/styles/general.css" rel="stylesheet" type="text/css")
         link(href="/styles/register.css" rel="stylesheet" type="text/css")
         meta(charset="utf-8")
         title Members Only - Register
     body
         header
-            h1 Members Only - Register
+            h1(class="title") Members Only - Register
         main(class="register-page")
             form(class="registerForm" action='' method="POST")
                 label(for="username") username: 
