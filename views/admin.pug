@@ -9,13 +9,13 @@ html(lang="en")
     body
         header
             if locals.user
-                nav
+                nav(class="member-nav")
                     a(href="/admin" class="admin-link selected") Admin
                     a(href="/members" class="members-link") Members
                     a(href="/profile" class="profile-link") Profile
                     a(href="/logout" class="logout-link") Logout
             else
-                nav
+                nav(class="login-nav")
                     a(class="login-link" href="/login") Login
                     a(class="reg-link" href="/register") Register
         main(class="admin-page")
