@@ -5,6 +5,10 @@ body {
 }
 
 header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     height: 10vh;
     border-bottom: 2px solid black;
     background-color: rgb(19, 17, 30);
@@ -19,6 +23,10 @@ main {
 }
 
 footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     height: 10vh;
     border-top: 2px solid black;
     background-color: rgb(19, 17, 30);
