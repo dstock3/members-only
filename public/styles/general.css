@@ -6,9 +6,8 @@ body {
 
 header {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     height: 10vh;
     border-bottom: 2px solid black;
     background-color: rgb(19, 17, 30);
@@ -37,4 +36,30 @@ a {
     text-decoration: none;
     color:antiquewhite;
     font-weight: bold;
+}
+
+.title {
+    font-size: 1.25em;
+    margin-left: 25px;
+}
+
+.member-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 25px;
+    width: 25%;
+}
+
+.login-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 25px;
+    width: 7%;
+
+}
+
+.social-links {
+    display: flex;
+    justify-content: space-between;
+    width: 10%;
 }
