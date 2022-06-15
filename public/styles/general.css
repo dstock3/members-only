@@ -55,11 +55,27 @@ a {
     justify-content: space-between;
     margin-right: 25px;
     width: 7%;
-
 }
 
 .social-links {
     display: flex;
     justify-content: space-between;
     width: 10%;
+}
+
+.prompt-container {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: rgb(19, 17, 30);
+    color: aliceblue;
+    padding: 15px;
+}
+
+.prompt-link {
+    margin-top: 15px;
 }

@@ -8,17 +8,20 @@ html(lang="en")
         meta(charset="utf-8")
         title Members Only - Login
     body
-        header
-            h1 Members Only - Please Log in
+        header(class="login-header")
+            h1(class="login-title") Members Only: Please Log in
         main(class="login-page")
             form(class="loginForm" action="" method="POST")
-                label(for="username") username: 
-                input(type="text" name="username")
+                label(class="login-username-label" for="username") Username: 
+                input(class="login-username-input" type="text" name="username")
 
-                label(for="password") password: 
-                input(type="password" name="password")
+                label(class="login-pw-label" for="password") Password: 
+                input(class="login-pw-input" type="password" name="password")
 
-                button(class="submit-btn") Login
+                button(class="submit-btn login-btn") Login
+            div(class="prompt-container")
+                div(class="prompt") Don't have an account?
+                a(class="prompt-link" href="/register") Register
 
 
         footer

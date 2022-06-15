@@ -1,0 +1,34 @@
+.login-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: rgb(19, 17, 30);
+    color: aliceblue;
+    padding: 15px;
+}
+
+.login-btn {
+    margin-top: 15px;
+}
+
+.login-username-label, .login-pw-label {
+    margin-bottom: 5px;
+}
+
+.login-pw-label {
+    margin-top: 15px;
+}
