@@ -4,6 +4,10 @@
     align-items: center;
 }
 
+.login-title {
+    font-size: 1.25em;
+}
+
 .login-page {
     display: flex;
     flex-direction: column;

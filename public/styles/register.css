@@ -1,0 +1,43 @@
+.reg-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reg-title {
+    font-size: 1.25em;
+}
+
+.register-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.reg-msg {
+    margin-top: 15px;
+    color: rgb(253, 139, 139);
+}
+
+.registerForm {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: rgb(19, 17, 30);
+    color: aliceblue;
+    padding: 15px;
+}
+
+.reg-btn {
+    margin-top: 15px;
+}
+
+.reg-username-label, .reg-pw-label, .reg-pwcf-label {
+    margin-bottom: 5px;
+}
+
+.reg-pw-label, .reg-pwcf-label {
+    margin-top: 15px;
+}

@@ -8,23 +8,28 @@ html(lang="en")
         meta(charset="utf-8")
         title Members Only - Register
     body
-        header
-            h1(class="title") Members Only - Register
+        header(class="reg-header")
+            h1(class="reg-title") Members Only - Register
         main(class="register-page")
             form(class="registerForm" action='' method="POST")
-                label(for="username") username: 
-                input(type="text" required name="username")
+                label(class="reg-username-label" for="username") Username: 
+                input(class="reg-username-input" type="text" required name="username")
 
                 if locals.userEx
                     span(class="reg-msg") This username already exists. Please choose another name.
                 
-                label(for="password") password: 
-                input(type="password" required name="password")
+                label(class="reg-pw-label" for="password") Password: 
+                input(class="reg-pw-input" type="password" required name="password")
 
-                label(for="confirmPassword") confirm pw: 
-                input(type="password" required name="confirmPassword")
+                label(class="reg-pwcf-label" for="confirmPassword") Confirm Password: 
+                input(class="reg-pwcf-input" type="password" required name="confirmPassword")
 
-                button(class="submit-btn") Register
+                button(class="submit-btn reg-btn") Register
+            
+            div(class="prompt-container")
+                div(class="prompt") Already have an account?
+                a(class="prompt-link" href="/login") Log In
+
             if locals.errors
                 ul(class="reg-err")
                     each val in locals.errors
