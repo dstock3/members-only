@@ -83,4 +83,7 @@ a {
 button {
     padding: 10px;
     font-weight: bold;
+    background-color: antiquewhite;
+    color: rgb(19, 17, 30);
+    border-radius: 5px;
 }
