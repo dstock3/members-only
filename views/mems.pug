@@ -6,10 +6,10 @@ html(lang="en")
         link(href="/styles/general.css" rel="stylesheet" type="text/css")
         link(href="/styles/error.css" rel="stylesheet" type="text/css")
         meta(charset="utf-8")
-        title Members Only
+        title Members Only: Member List
     body
         header
-            h1(class="title") Members Only
+            h1(class="title") Members Only: Member List
             if locals.user
                 nav(class="member-nav")
                     a(href="/admin" class="admin-link") Admin
@@ -25,6 +25,13 @@ html(lang="en")
                 div(class="total-members")
                     h2(class="total-members-head") Total Members
                     span(class="members-length") #{members.length}
+                each member in members
+                    div(class="member-name") #{member.username}
+            else 
+                div(class="prompt")
+                    h2(class="prompt-head") Log in to see members
+            
+          
 
         footer
             div(class="social-links")
