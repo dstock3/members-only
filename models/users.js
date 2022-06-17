@@ -11,7 +11,7 @@ const UserSchema = new Schema({
 });
 
 UserSchema
-  .virtual('getProfileUrl')
+  .virtual('getMemURL')
   .get(function () {
     const url = '/members/' + this._id
     return url
