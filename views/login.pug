@@ -17,6 +17,9 @@ html(lang="en")
 
                 label(class="login-pw-label" for="password") Password: 
                 input(class="login-pw-input" type="password" name="password")
+                
+                if message
+                    span #{message}    
 
                 button(class="submit-btn login-btn") Login
             div(class="prompt-container")

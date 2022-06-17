@@ -6,7 +6,7 @@ html(lang="en")
         link(href="/styles/general.css" rel="stylesheet" type="text/css")
         link(href="/styles/error.css" rel="stylesheet" type="text/css")
         meta(charset="utf-8")
-        title Members Only - Error!
+        title Members Only
     body
         header
             h1(class="title") Members Only
@@ -21,7 +21,10 @@ html(lang="en")
                     a(class="login-link" href="/login") Login
                     a(class="reg-link" href="/register") Register
         main(class="members-page")
-
+            if locals.user
+                div(class="total-members")
+                    h2(class="total-members-head") Total Members
+                    span(class="members-length") #{members.length}
 
         footer
             div(class="social-links")
